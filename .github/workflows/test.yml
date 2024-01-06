@@ -9,12 +9,11 @@ permissions:
 
 jobs:
   test-main:
-    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
 
     steps:
       - name: Run tests
-        run: echo "Running on main.."
+        run: echo "Running on main.. '${{ github.ref }}' '${{ github.ref_name }}'"
 
   test-dev:
     if: github.ref == 'refs/heads/main'
