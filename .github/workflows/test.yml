@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  push:
+    branches: ['main', 'dev']
+
+permissions:
+  contents: read
+
+jobs:
+  test-main:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        run: echo "Running on main.."
+
+  test-dev:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run tests
+        run: echo "Running on dev.."
